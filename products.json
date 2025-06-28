@@ -1,0 +1,488 @@
+[
+  {
+    "id": "6272727",
+    "name": "Le mineral 600ml",
+    "price": 3500,
+    "category": "a1",
+    "image": null,
+    "buyPrice": 2500,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "588433",
+    "name": "Prima 600ml",
+    "price": 3900,
+    "category": "MAKANAN",
+    "image": null,
+    "buyPrice": 2800,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "8994016014842",
+    "name": "Alfamart Disneyp 600ml",
+    "price": 3800,
+    "category": "a1",
+    "image": null,
+    "buyPrice": 2800,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "5252",
+    "name": "T",
+    "price": 5,
+    "category": "a1",
+    "image": null,
+    "buyPrice": 5,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "111",
+    "name": "T",
+    "price": 8000,
+    "category": "a1",
+    "image": null,
+    "buyPrice": 600,
+    "lastUpdated": "Sabtu, 21 Juni 2025 pukul 09.41.57"
+  },
+  {
+    "id": "45666",
+    "name": "D",
+    "price": 9,
+    "category": "a1",
+    "image": null,
+    "buyPrice": 8,
+    "lastUpdated": "Sabtu, 21 Juni 2025 pukul 09.42.03"
+  },
+  {
+    "id": "781912",
+    "name": "Lem",
+    "price": 35000,
+    "category": "a1",
+    "image": null,
+    "buyPrice": 25000,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "5261727",
+    "name": "Es teh 4000",
+    "price": 4000,
+    "category": "a1",
+    "image": null,
+    "buyPrice": 4000,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "4902430400947",
+    "name": "Pentine",
+    "price": 25000,
+    "category": "a2",
+    "image": null,
+    "buyPrice": 19000,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "451661750",
+    "name": "Nipis madu",
+    "price": 5000,
+    "category": "a2",
+    "image": "images/product-451661750.jpg",
+    "buyPrice": 3000,
+    "lastUpdated": "Sabtu, 21 Juni 2025 pukul 09.42.01"
+  },
+  {
+    "id": "578819198",
+    "name": "Aqua air 600 ml",
+    "price": 3000,
+    "category": "a2",
+    "image": null,
+    "buyPrice": 1500,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "8993175538947",
+    "name": "Nextar cookies pineapple 8x11g",
+    "price": 8000,
+    "category": "a2",
+    "image": null,
+    "buyPrice": 5000,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "8991102246897",
+    "name": "Fruzz fruit combo 88G",
+    "price": 9000,
+    "category": "a2",
+    "image": null,
+    "buyPrice": 5000,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "8993053131093",
+    "name": "Paseo elegant 150g",
+    "price": 11000,
+    "category": "a2",
+    "image": null,
+    "buyPrice": 5000,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "8992846223229",
+    "name": "Akurat strip uji",
+    "price": 16000,
+    "category": "a2",
+    "image": null,
+    "buyPrice": 10000,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "320142884077",
+    "name": "Nextrar 6x4 pineapple cookies 85g",
+    "price": 8000,
+    "category": "a2",
+    "image": null,
+    "buyPrice": 6000,
+    "lastUpdated": "Sabtu, 21 Juni 2025 pukul 09.41.59"
+  },
+  {
+    "id": "8991001113078",
+    "name": "SILVERQUEEN CHUNK BEAR 3X25G",
+    "price": 32000,
+    "category": "a2",
+    "image": null,
+    "buyPrice": 25000,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "8996001600146",
+    "name": "Pucuk harum LS 350 ml",
+    "price": 4500,
+    "category": "a2",
+    "image": null,
+    "buyPrice": 2500,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "461718191919",
+    "name": "PROMAG herbal",
+    "price": 36000,
+    "category": "a2",
+    "image": null,
+    "buyPrice": 25000,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "8994016013227",
+    "name": "Alfamart air 600ml",
+    "price": 3200,
+    "category": "a2",
+    "image": null,
+    "buyPrice": 1800,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "8992712586014",
+    "name": "Adem sari chingku",
+    "price": 7800,
+    "category": "a2",
+    "image": null,
+    "buyPrice": 5200,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "8998866622608",
+    "name": "Sosoft liqdetq rose  watelily",
+    "price": 16000,
+    "category": "a2",
+    "image": null,
+    "buyPrice": 11500,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "636226",
+    "name": "Es teh 3000",
+    "price": 3000,
+    "category": "a2",
+    "image": null,
+    "buyPrice": 3000,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "8998866203258",
+    "name": "Sedap cup bakso belduk 77g",
+    "price": 5500,
+    "category": "a2",
+    "image": null,
+    "buyPrice": 4000,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "8999999706180",
+    "name": "Pepsodent PG ekonomi jumbo 190G",
+    "price": 15000,
+    "category": "a3",
+    "image": null,
+    "buyPrice": 10000,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "61000",
+    "name": "Jamu",
+    "price": 9000,
+    "category": "a3",
+    "image": null,
+    "buyPrice": 8000,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "8992761002084",
+    "name": "Fanta stroberi zero sugar 390ml",
+    "price": 5000,
+    "category": "a3",
+    "image": null,
+    "buyPrice": 3800,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "8996001526224",
+    "name": "Wow spaghetti carbonara 88g",
+    "price": 3000,
+    "category": "a3",
+    "image": null,
+    "buyPrice": 1800,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "8998009050053",
+    "name": "Ultra sari kacang ijo 250ml",
+    "price": 5800,
+    "category": "a3",
+    "image": null,
+    "buyPrice": 3200,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "8998009011740",
+    "name": "Ultra milk moka 200ml",
+    "price": 5400,
+    "category": "a3",
+    "image": null,
+    "buyPrice": 3800,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "9556182023258",
+    "name": "Cadbury diary milk 62g",
+    "price": 16000,
+    "category": "a3",
+    "image": null,
+    "buyPrice": 9800,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "8995227500582",
+    "name": "Cap panda cincau can 310ml",
+    "price": 7500,
+    "category": "a3",
+    "image": null,
+    "buyPrice": 5500,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "8995227502814",
+    "name": "Cap panda Cin selasih 310ml",
+    "price": 7500,
+    "category": "a3",
+    "image": null,
+    "buyPrice": 5200,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "8998009010231",
+    "name": "Ultra milk UHT coklat 250 ml",
+    "price": 7500,
+    "category": "a3",
+    "image": null,
+    "buyPrice": 4500,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "8990052000412",
+    "name": "Makuku L26",
+    "price": 45000,
+    "category": "a3",
+    "image": null,
+    "buyPrice": 35000,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "8997009781110",
+    "name": "Hydro coco",
+    "price": 17000,
+    "category": "a3",
+    "image": null,
+    "buyPrice": 10000,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "8888166989634",
+    "name": "Monde gold Snack 62g",
+    "price": 5000,
+    "category": "a3",
+    "image": null,
+    "buyPrice": 3000,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "8992772315128",
+    "name": "Soffel kulit jeruk 60g",
+    "price": 13000,
+    "category": "a3",
+    "image": null,
+    "buyPrice": 7000,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "8999099092077",
+    "name": "SGM eksplor 3+ coklat 900g",
+    "price": 80000,
+    "category": "a4",
+    "image": null,
+    "buyPrice": 70000,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "8997011200067",
+    "name": "DECARDYL OBAT BATUK 120ML",
+    "price": 30000,
+    "category": "a4",
+    "image": null,
+    "buyPrice": 23000,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "8991001121400",
+    "name": "Silverqueen almond 55g",
+    "price": 15000,
+    "category": "a4",
+    "image": null,
+    "buyPrice": 9500,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "8998866610377",
+    "name": "Isoplus isotonik 350ml",
+    "price": 3500,
+    "category": "a4",
+    "image": null,
+    "buyPrice": 2500,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "89940160132",
+    "name": "Lama",
+    "price": 5000,
+    "category": "a4",
+    "image": null,
+    "buyPrice": 6000,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "8998866102612",
+    "name": "Kondom soft zig zag",
+    "price": 12000,
+    "category": "a4",
+    "image": null,
+    "buyPrice": 8500,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "8997217370526",
+    "name": "Camel option yelow 12",
+    "price": 21000,
+    "category": "a5",
+    "image": null,
+    "buyPrice": 16000,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "8991115040093",
+    "name": "Happydent white 14g",
+    "price": 5000,
+    "category": "a5",
+    "image": null,
+    "buyPrice": 3000,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "8998009040023",
+    "name": "teh kotak jasmine tea 330ml",
+    "price": 3200,
+    "category": "a5",
+    "image": null,
+    "buyPrice": 1800,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "8996001355978",
+    "name": "Beng beng shareit 68g",
+    "price": 16000,
+    "category": "a5",
+    "image": null,
+    "buyPrice": 11000,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "8996001401200",
+    "name": "GENTLE GEN PARISIENNE GARDEN",
+    "price": 19500,
+    "category": "a5",
+    "image": null,
+    "buyPrice": 15500,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "8996001401194",
+    "name": "GENTLE GEN FRENCH PEONY",
+    "price": 19500,
+    "category": "a5",
+    "image": null,
+    "buyPrice": 15500,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "8998899001166",
+    "name": "Baygon aeo Citrus 600ml",
+    "price": 45000,
+    "category": "a5",
+    "image": null,
+    "buyPrice": 35000,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "A278217068209A",
+    "name": "Bomber lilin lampu 10 Batang",
+    "price": 10000,
+    "category": "b1",
+    "image": null,
+    "buyPrice": 6000,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "899401601322",
+    "name": "Alamat air 580ml",
+    "price": 5800,
+    "category": "b1",
+    "image": null,
+    "buyPrice": 25000,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  },
+  {
+    "id": "8999999572303",
+    "name": "SUNLIGHT 420ML",
+    "price": 9000,
+    "category": "b3",
+    "image": null,
+    "buyPrice": 6000,
+    "lastUpdated": "21/06/2025, 09.24.02"
+  }
+]

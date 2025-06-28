@@ -1,0 +1,2696 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FXID - Premium Online Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6C63FF;
+            --primary-dark: #564FD9;
+            --primary-light: #8B85FF;
+            --secondary: #FF6584;
+            --secondary-dark: #E04F6D;
+            --accent: #00C9A7;
+            --accent-dark: #00A58E;
+            --success: #28C76F;
+            --success-dark: #1F9D57;
+            --warning: #FF9F43;
+            --warning-dark: #FF851A;
+            --error: #EA5455;
+            --error-dark: #D63031;
+            --dark: #2D3748;
+            --dark-light: #4A5568;
+            --light: #F7FAFC;
+            --gray-50: #F8FAFC;
+            --gray-100: #F1F5F9;
+            --gray-200: #E2E8F0;
+            --gray-300: #CBD5E1;
+            --gray-400: #94A3B8;
+            --gray-500: #64748B;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1E293B;
+            --gray-900: #0F172A;
+            
+            --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+            --shadow-primary: 0 0 0 3px rgba(108, 99, 255, 0.3);
+            
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            
+            --border-radius-sm: 0.375rem;
+            --border-radius-md: 0.5rem;
+            --border-radius-lg: 0.75rem;
+            --border-radius-xl: 1rem;
+            --border-radius-2xl: 1.5rem;
+            --border-radius-full: 9999px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--gray-50);
+            color: var(--dark);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .header-nav {
+            max-width: 1440px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--primary);
+            font-size: 1.75rem;
+            font-weight: 800;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+            color: var(--primary-dark);
+        }
+
+        .logo-icon {
+            font-size: 1.5em;
+            margin-right: 0.25em;
+        }
+
+        .search-container {
+            flex: 1;
+            max-width: 600px;
+            margin: 0 2rem;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.85rem 1.25rem 0.85rem 3.5rem;
+            border: 2px solid var(--gray-200);
+            border-radius: var(--border-radius-full);
+            background: var(--gray-50);
+            font-size: 1rem;
+            transition: var(--transition);
+            box-shadow: var(--shadow-inner);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: white;
+            box-shadow: var(--shadow-primary);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1.25rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray-500);
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .nav-btn {
+            position: relative;
+            background: var(--primary);
+            border: none;
+            color: white;
+            padding: 0.85rem;
+            border-radius: var(--border-radius-full);
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -0.5rem;
+            right: -0.5rem;
+            background: var(--error);
+            color: white;
+            border-radius: var(--border-radius-full);
+            padding: 0.25rem 0.6rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            min-width: 1.5rem;
+            height: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* Main Layout */
+        .main-container {
+            max-width: 1440px;
+            margin: 2.5rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 2.5rem;
+        }
+
+        /* Product Section */
+        .products-section {
+            background: white;
+            border-radius: var(--border-radius-xl);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--dark);
+            letter-spacing: -0.025em;
+            line-height: 1.3;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+
+        .filter-controls {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.6rem 1.25rem;
+            border: 2px solid var(--gray-200);
+            background: white;
+            border-radius: var(--border-radius-full);
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            border-color: var(--primary);
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray-100);
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary-light);
+        }
+
+        .product-image {
+            position: relative;
+            overflow: hidden;
+            height: 240px;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-slow);
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--secondary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--border-radius-full);
+            font-size: 0.75rem;
+            font-weight: 600;
+            box-shadow: var(--shadow-md);
+            z-index: 1;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--dark);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            line-height: 1.4;
+        }
+
+        .product-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .price-current {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .price-original {
+            font-size: 0.9rem;
+            color: var(--gray-400);
+            text-decoration: line-through;
+            margin-right: 0.5rem;
+        }
+
+        .add-to-cart-btn {
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border: none;
+            padding: 0.85rem;
+            border-radius: var(--border-radius-md);
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .add-to-cart-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            background: linear-gradient(135deg, var(--primary-dark), var(--accent-dark));
+        }
+
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .sidebar-section {
+            background: white;
+            border-radius: var(--border-radius-xl);
+            padding: 2rem;
+            box-shadow: var(--shadow-lg);
+            position: sticky;
+            top: 120px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .cart-item-image {
+            width: 60px;
+            height: 60px;
+            border-radius: var(--border-radius-md);
+            object-fit: cover;
+            border: 1px solid var(--gray-200);
+        }
+
+        .cart-item-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .cart-item-name {
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 0.3rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .cart-item-price {
+            color: var(--gray-600);
+            font-size: 0.85rem;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .qty-btn {
+            background: var(--gray-100);
+            border: none;
+            border-radius: var(--border-radius-full);
+            width: 2rem;
+            height: 2rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: var(--gray-700);
+        }
+
+        .qty-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .remove-btn {
+            background: var(--error);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius-full);
+            width: 2rem;
+            height: 2rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .remove-btn:hover {
+            transform: scale(1.1);
+            background: var(--error-dark);
+            box-shadow: var(--shadow-md);
+        }
+
+        .cart-total {
+            margin: 1.75rem 0;
+            padding: 1.25rem;
+            background: var(--gray-50);
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--gray-200);
+        }
+
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.6rem;
+            font-size: 0.95rem;
+            color: var(--gray-700);
+        }
+
+        .total-final {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--primary);
+            border-top: 1px solid var(--gray-200);
+            padding-top: 0.75rem;
+            margin-top: 0.5rem;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            background: linear-gradient(135deg, var(--success), var(--success-dark));
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: var(--border-radius-md);
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .checkout-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            background: linear-gradient(135deg, var(--success-dark), #047857);
+        }
+
+        .checkout-btn:disabled {
+            background: var(--gray-300);
+            color: var(--gray-500);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* Modal Styles */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-slow);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: var(--border-radius-xl);
+            padding: 2.5rem;
+            max-width: 640px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            transform: scale(0.8);
+            transition: var(--transition-slow);
+            box-shadow: var(--shadow-2xl);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .modal.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.25rem;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1.3;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray-500);
+            padding: 0.5rem;
+            border-radius: var(--border-radius-full);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+
+        .close-btn:hover {
+            background: var(--gray-100);
+            color: var(--dark);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--gray-700);
+        }
+
+        .form-input,
+        .form-select {
+            width: 100%;
+            padding: 0.85rem 1.25rem;
+            border: 2px solid var(--gray-200);
+            border-radius: var(--border-radius-md);
+            font-size: 1rem;
+            transition: var(--transition);
+            box-shadow: var(--shadow-inner);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .form-input:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: var(--shadow-primary);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            border: none;
+            padding: 0.85rem 1.75rem;
+            border-radius: var(--border-radius-md);
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+        }
+
+        .btn-secondary {
+            background: var(--gray-100);
+            color: var(--gray-700);
+            border: none;
+            padding: 0.85rem 1.75rem;
+            border-radius: var(--border-radius-md);
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            margin-left: 1rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-secondary:hover {
+            background: var(--gray-200);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Enhanced QR Container */
+        .qr-container {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: var(--border-radius-xl);
+            margin: 1.5rem 0;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--gray-200);
+            background: linear-gradient(135deg, var(--gray-50) 0%, white 100%);
+        }
+
+        .qr-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(108, 99, 255, 0.1) 0%, transparent 70%);
+            animation: qr-pulse 3s infinite;
+        }
+
+        @keyframes qr-pulse {
+            0% { transform: scale(1); opacity: 0.4; }
+            50% { transform: scale(1.15); opacity: 0.15; }
+            100% { transform: scale(1); opacity: 0.4; }
+        }
+
+        .qr-title {
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-bottom: 1.25rem;
+            color: var(--dark);
+            position: relative;
+            z-index: 1;
+        }
+
+        .qr-instruction {
+            color: var(--gray-600);
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .qr-code {
+            padding: 1.5rem;
+            background: white;
+            border-radius: var(--border-radius-lg);
+            display: inline-block;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            z-index: 1;
+            border: 1px solid var(--gray-200);
+            margin-bottom: 1.5rem;
+        }
+
+        .payment-details {
+            background: var(--gray-50);
+            padding: 1.25rem;
+            border-radius: var(--border-radius-lg);
+            margin-top: 1.5rem;
+            text-align: left;
+            position: relative;
+            z-index: 1;
+        }
+
+        .payment-details div {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .payment-details span:first-child {
+            color: var(--gray-600);
+            font-weight: 500;
+        }
+
+        .payment-details span:last-child {
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        /* QRIS Payment Modals */
+        .qris-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-slow);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .qris-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .qris-modal-content {
+            background: white;
+            border-radius: var(--border-radius-xl);
+            padding: 2.5rem;
+            max-width: 540px;
+            width: 90%;
+            box-shadow: var(--shadow-2xl);
+            transform: scale(0.8);
+            transition: var(--transition-slow);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .qris-modal.active .qris-modal-content {
+            transform: scale(1);
+        }
+
+        .qris-image {
+            width: 240px;
+            height: 240px;
+            margin: 1.5rem auto;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--border-radius-lg);
+        }
+
+        .qris-image.enlarged {
+            width: 300px;
+            height: 300px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            justify-content: center;
+        }
+
+        /* Success Popup */
+        .success-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-slow);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .success-popup.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .success-popup-content {
+            background: white;
+            border-radius: var(--border-radius-xl);
+            padding: 2.5rem;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: var(--shadow-2xl);
+            transform: scale(0.8);
+            transition: var(--transition-slow);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .success-popup.active .success-popup-content {
+            transform: scale(1);
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            color: var(--success);
+            margin-bottom: 1.5rem;
+            animation: bounce 1s;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-20px);}
+            60% {transform: translateY(-10px);}
+        }
+
+        .popup-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .popup-message {
+            font-size: 1.1rem;
+            color: var(--gray-600);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .popup-footer {
+            margin-top: 1.5rem;
+            color: var(--gray-500);
+            font-size: 0.9rem;
+        }
+
+        /* Loading Spinner */
+        .loading-spinner {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 48px;
+            height: 48px;
+            border: 4px solid var(--primary);
+            border-top: 4px solid transparent;
+            border-radius: var(--border-radius-full);
+            animation: spin 1s linear infinite;
+            z-index: 3000;
+        }
+
+        .loading-spinner.active {
+            display: block;
+        }
+
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        /* Receipt Modal */
+        .receipt-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-slow);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .receipt-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .receipt-modal-content {
+            background: white;
+            border-radius: var(--border-radius-xl);
+            padding: 2.5rem;
+            max-width: 640px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            transform: scale(0.8);
+            transition: var(--transition-slow);
+            box-shadow: var(--shadow-2xl);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .receipt-modal.active .receipt-modal-content {
+            transform: scale(1);
+        }
+
+        .receipt-content {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-md);
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--gray-200);
+        }
+
+        .receipt-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.25rem;
+            border-bottom: 2px dashed var(--gray-200);
+        }
+
+        .receipt-logo {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .receipt-subtitle {
+            color: var(--gray-600);
+            font-size: 0.95rem;
+        }
+
+        .receipt-details {
+            margin-bottom: 1.5rem;
+        }
+
+        .receipt-details p {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            color: var(--gray-700);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .receipt-details p span:first-child {
+            font-weight: 600;
+            color: var(--gray-800);
+        }
+
+        .receipt-items {
+            margin-bottom: 1.5rem;
+        }
+
+        .receipt-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--gray-200);
+            font-size: 0.95rem;
+        }
+
+        .receipt-total {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--primary);
+            text-align: right;
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 2px dashed var(--gray-200);
+        }
+
+        /* Download Button */
+        .download-btn {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--success), var(--success-dark));
+            color: white;
+            border: none;
+            padding: 0.85rem 2rem;
+            border-radius: var(--border-radius-md);
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            background: linear-gradient(135deg, var(--success-dark), #047857);
+        }
+
+        .download-btn:active {
+            transform: translateY(0);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .download-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .download-btn:hover::before {
+            left: 100%;
+        }
+
+        .download-btn i {
+            font-size: 1.2rem;
+            animation: icon-pulse 1.5s infinite;
+        }
+
+        @keyframes icon-pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+            100% { transform: scale(1); }
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 2rem 1rem;
+            color: var(--gray-500);
+        }
+
+        .empty-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            opacity: 0.7;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius-md);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: var(--transition);
+            box-shadow: var(--shadow-md);
+        }
+
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* History Modal */
+        .history-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-slow);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .history-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .history-modal-content {
+            background: white;
+            border-radius: var(--border-radius-xl);
+            padding: 2.5rem;
+            max-width: 900px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            transform: scale(0.8);
+            transition: var(--transition-slow);
+            box-shadow: var(--shadow-2xl);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .history-modal.active .history-modal-content {
+            transform: scale(1);
+        }
+
+        .history-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.25rem;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .history-modal-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1.3;
+        }
+
+        .history-table-wrapper {
+            margin-top: 1.5rem;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+
+        .history-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        .history-table th {
+            background: var(--primary);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .history-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--gray-200);
+            color: var(--gray-700);
+        }
+
+        .history-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .history-table tr:hover {
+            background-color: var(--gray-50);
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.35rem 0.75rem;
+            border-radius: var(--border-radius-full);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .status-badge.completed {
+            background-color: rgba(40, 199, 111, 0.1);
+            color: var(--success-dark);
+        }
+
+        .action-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius-md);
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.9rem;
+            box-shadow: var(--shadow-sm);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .action-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .history-empty-state {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Full-Screen QRIS */
+        .fullscreen-qris {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 3000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-slow);
+        }
+
+        .fullscreen-qris.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .fullscreen-qris-image {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-2xl);
+            transition: var(--transition);
+        }
+
+        .fullscreen-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: var(--gray-100);
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray-700);
+            padding: 0.75rem;
+            border-radius: var(--border-radius-full);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3rem;
+            height: 3rem;
+        }
+
+        .fullscreen-close:hover {
+            background: var(--gray-200);
+            transform: scale(1.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .main-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .sidebar {
+                order: -1;
+            }
+
+            .sidebar-section {
+                position: static;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-nav {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .search-container {
+                margin: 0;
+                max-width: none;
+                width: 100%;
+            }
+
+            .main-container {
+                margin: 1.5rem auto;
+                padding: 0 1.5rem;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1.25rem;
+            }
+
+            .products-section,
+            .sidebar-section {
+                padding: 1.5rem;
+            }
+
+            .filter-controls {
+                gap: 0.5rem;
+            }
+
+            .history-modal-content,
+            .receipt-modal-content {
+                padding: 1.5rem;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .action-buttons button {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-content,
+            .qris-modal-content,
+            .success-popup-content {
+                padding: 1.5rem;
+            }
+
+            .qris-image {
+                width: 200px;
+                height: 200px;
+            }
+
+            .qris-image.enlarged {
+                width: 280px;
+                height: 280px;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                margin-left: 0;
+                margin-top: 0.5rem;
+            }
+
+            .history-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(108, 99, 255, 0.6); }
+            70% { box-shadow: 0 0 0 12px rgba(108, 99, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(108, 99, 255, 0); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Spinner -->
+    <div class="loading-spinner" id="loadingSpinner"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-nav">
+            <a href="#" class="logo">
+                <i class="fas fa-shopping-bag logo-icon"></i>
+                FXID
+            </a>
+            
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" class="search-input" id="searchInput" placeholder="Cari produk impian Anda...">
+            </div>
+            
+            <div class="nav-actions">
+                <button class="nav-btn" onclick="showHistoryModal()">
+                    <i class="fas fa-history"></i>
+                </button>
+                <button class="nav-btn" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Products Section -->
+        <div class="products-section">
+            <div class="section-header">
+                <h2 class="section-title">Produk Pilihan</h2>
+                <div class="filter-controls">
+                    <button class="filter-btn active" data-filter="all">Semua</button>
+                    <button class="filter-btn" data-filter="MAKANAN">Makanan</button>
+                    <button class="filter-btn" data-filter="MINUMAN">Minuman</button>
+                    <button class="filter-btn" data-filter="PROMO">Promo</button>
+                </div>
+            </div>
+            
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded here -->
+                <div class="empty-state">
+                    <div class="empty-icon">🛍️</div>
+                    <p>Memuat produk...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <!-- Cart Section -->
+            <div class="sidebar-section" id="cartSection">
+                <div class="section-header">
+                    <h3 class="section-title">Keranjang Belanja</h3>
+                    <button class="close-btn" onclick="clearCart()">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+                
+                <div id="cartItems">
+                    <div class="empty-state">
+                        <div class="empty-icon">🛒</div>
+                        <p>Keranjang masih kosong</p>
+                    </div>
+                </div>
+                
+                <div class="cart-total" id="cartTotal" style="display: none;">
+                    <div class="total-row">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">Rp 0</span>
+                    </div>
+                    <div class="total-row">
+                        <span>Total:</span>
+                        <span id="totalPrice">Rp 0</span>
+                    </div>
+                </div>
+                
+                <button class="checkout-btn" id="checkoutBtn" disabled onclick="showCheckoutModal()">
+                    <i class="fas fa-credit-card"></i>
+                    Checkout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal" id="checkoutModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Informasi Pembayaran</h3>
+                <button class="close-btn" onclick="closeModal('checkoutModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <form id="checkoutForm">
+                <div class="form-group">
+                    <label class="form-label">Nama Pemesan</label>
+                    <input type="text" class="form-input" id="customerName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Nomor HP (WhatsApp)</label>
+                    <input type="tel" class="form-input" id="phoneNumber" required pattern="\+?[0-9]{10,13}">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Jam Pengambilan</label>
+                    <input type="time" class="form-input" id="pickupTime" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Metode Pembayaran</label>
+                    <select class="form-select" id="paymentMethod" required>
+                        <option value="cash">Bayar di Kasir</option>
+                        <option value="qris">QRIS</option>
+                    </select>
+                </div>
+                
+                <div class="btn-group">
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-check"></i>
+                        Konfirmasi Pembayaran
+                    </button>
+                    <button type="button" class="btn-secondary" onclick="closeModal('checkoutModal')">
+                        Batal
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- QRIS Payment Modal -->
+    <div class="qris-modal" id="qrisModal">
+        <div class="qris-modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Pembayaran QRIS</h3>
+                <button class="close-btn" aria-label="Tutup Modal QRIS" onclick="closeModal('qrisModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="qr-container">
+                <h4 class="qr-title">Scan QR Code Berikut</h4>
+                <p class="qr-instruction">Gunakan aplikasi mobile banking atau e-wallet untuk scan</p>
+                
+                <div class="qr-code-container">
+                    <img src="qris.jpg" alt="QRIS Payment" class="qris-image" id="qrisModalImage">
+                </div>
+                
+                <div class="payment-details">
+                    <div>
+                        <span>Total Pembayaran:</span>
+                        <span class="amount" id="qrisAmount">Rp 0</span>
+                    </div>
+                    <div>
+                        <span>Merchant:</span>
+                        <span>FXID_STORE</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="action-buttons">
+                <button class="download-btn" onclick="downloadQrisImage()">
+                    <i class="fas fa-download"></i>
+                    Unduh QRIS
+                </button>
+                <button class="btn-primary" onclick="confirmQrisPayment()">
+                    <i class="fas fa-check"></i>
+                    Saya Sudah Bayar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Popup -->
+    <div class="success-popup" id="successPopup">
+        <div class="success-popup-content">
+            <i class="fas fa-check-circle success-icon"></i>
+            <h3 class="popup-title">Pembayaran Berhasil!</h3>
+            <p class="popup-message">Terima kasih telah berbelanja di FXID Store. Silakan tunjukkan QR code di kasir untuk pengambilan barang.</p>
+            
+            <div class="qr-container">
+                <div class="qr-code-container">
+                    <img src="qris.jpg" alt="QRIS Payment" class="qris-image">
+                </div>
+            </div>
+            
+            <a href="https://wa.me/6289526335486" class="whatsapp-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i> Kirim Bukti Pembayaran
+            </a>
+            
+            <p class="popup-footer">Popup ini akan menutup otomatis dalam <span id="countdown">5</span> detik</p>
+        </div>
+    </div>
+
+    <!-- Full-Screen QRIS Image -->
+    <div class="fullscreen-qris" id="fullscreenQris">
+        <button class="fullscreen-close" aria-label="Tutup Full-Screen" onclick="closeModal('fullscreenQris')">
+            <i class="fas fa-times"></i>
+        </button>
+        <img src="qris.jpg" alt="QRIS Full-Screen" class="fullscreen-qris-image">
+    </div>
+
+    <!-- Receipt Modal -->
+    <div class="receipt-modal" id="receiptModal">
+        <div class="receipt-modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Struk Pembelian</h3>
+                <button class="close-btn" onclick="closeModal('receiptModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="receipt-content">
+                <div class="receipt-header">
+                    <div class="receipt-logo">FXID_STORE</div>
+                    <p class="receipt-subtitle">Struk Pembelian</p>
+                    <p id="receiptDate"></p>
+                    <p id="receiptPin"></p>
+                </div>
+                
+                <div class="receipt-details">
+                    <p>
+                        <span>Nama:</span>
+                        <span id="receiptName"></span>
+                    </p>
+                    <p>
+                        <span>No HP:</span>
+                        <span id="receiptPhone"></span>
+                    </p>
+                    <p>
+                        <span>Jam Pengambilan:</span>
+                        <span id="receiptPickupTime"></span>
+                    </p>
+                    <p>
+                        <span>Metode Pembayaran:</span>
+                        <span id="receiptPaymentMethod"></span>
+                    </p>
+                </div>
+                
+                <div class="receipt-items" id="receiptItems"></div>
+                
+                <div class="receipt-total" id="receiptTotal"></div>
+            </div>
+            
+            <div class="qr-container">
+                <div class="qr-title">QR Transaksi</div>
+                <div class="qr-code" id="qrTransaction"></div>
+                <button class="download-btn" onclick="downloadQR('qrTransaction')">
+                    <i class="fas fa-download"></i>
+                    Unduh QR Transaksi
+                </button>
+            </div>
+            
+            <div class="qr-container">
+                <div class="qr-title">QR Pengambilan</div>
+                <div class="qr-code" id="qrPickup"></div>
+            </div>
+            
+            <div style="display: flex; justify-content: flex-end; margin-top: 2rem;">
+                <button class="btn-primary" onclick="sendToWhatsApp()">
+                    <i class="fab fa-whatsapp"></i>
+                    Kirim ke WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- History Modal -->
+    <div class="history-modal" id="historyModal">
+        <div class="history-modal-content">
+            <div class="history-modal-header">
+                <h3 class="history-modal-title">Riwayat Transaksi</h3>
+                <button class="close-btn" onclick="closeModal('historyModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="history-table-wrapper">
+                <table class="history-table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Tanggal</th>
+                            <th>Nama</th>
+                            <th>Total</th>
+                            <th>Status</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="historyTableBody">
+                        <!-- History items will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="history-empty-state" id="historyEmptyState" style="display: none;">
+                <div class="empty-icon">📜</div>
+                <p>Belum ada riwayat transaksi</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- History Detail Modal -->
+    <div class="modal" id="historyDetailModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Detail Pesanan</h3>
+                <button class="close-btn" onclick="closeModal('historyDetailModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div id="historyDetailContent"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <script>
+        // State Management
+        let products = [];
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let transactions = JSON.parse(localStorage.getItem('transactions')) || [];
+        let checkoutData = null;
+
+        // Helper function to draw rounded rectangle
+        function drawRoundedRect(ctx, x, y, width, height, radius) {
+            ctx.beginPath();
+            ctx.moveTo(x + radius, y);
+            ctx.lineTo(x + width - radius, y);
+            ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+            ctx.lineTo(x + width, y + height - radius);
+            ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+            ctx.lineTo(x + radius, y + height);
+            ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+            ctx.lineTo(x, y + radius);
+            ctx.quadraticCurveTo(x, y, x + radius, y);
+            ctx.closePath();
+        }
+
+        // Show Loading Spinner
+        function showLoadingSpinner() {
+            document.getElementById('loadingSpinner').classList.add('active');
+        }
+
+        // Hide Loading Spinner
+        function hideLoadingSpinner() {
+            document.getElementById('loadingSpinner').classList.remove('active');
+        }
+
+        // Function to fetch products from a JSON file
+        async function fetchProducts() {
+            showLoadingSpinner();
+            try {
+                const response = await fetch('products.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                products = await response.json();
+                displayProducts();
+                updateCart();
+            } catch (error) {
+                console.error('Gagal mengambil data produk:', error);
+                document.getElementById('productsGrid').innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-icon">❌</div>
+                        <p>Gagal memuat produk. Silakan coba lagi nanti.</p>
+                    </div>
+                `;
+            } finally {
+                hideLoadingSpinner();
+            }
+        }
+
+        // Create Designed QR Canvas
+        function createDesignedQRCanvas(qrCanvas, transactionData) {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            const width = 400;
+            const height = 600;
+            canvas.width = width;
+            canvas.height = height;
+
+            // Background Gradient
+            const gradient = ctx.createLinearGradient(0, 0, width, height);
+            gradient.addColorStop(0, '#4f46e5');
+            gradient.addColorStop(1, '#06b6d4');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, width, height);
+
+            // White Card
+            ctx.fillStyle = '#ffffff';
+            drawRoundedRect(ctx, 20, 20, width - 40, height - 40, 20);
+            ctx.fill();
+            ctx.shadowColor = 'rgba(0, 0, 0, 0.2)';
+            ctx.shadowBlur = 10;
+            ctx.shadowOffsetY = 5;
+            ctx.fill();
+            ctx.shadowColor = 'transparent';
+
+            // Logo and Store Name
+            ctx.fillStyle = '#4f46e5';
+            ctx.font = 'bold 30px Inter';
+            ctx.textAlign = 'center';
+            ctx.fillText('FXID_STORE', width / 2, 80);
+            ctx.font = '16px Inter';
+            ctx.fillStyle = '#374151';
+            ctx.fillText('Transaksi Pembelian', width / 2, 110);
+
+            // QR Code
+            const qrSize = 200;
+            ctx.drawImage(qrCanvas, (width - qrSize) / 2, 150, qrSize, qrSize);
+
+            // Frame around QR
+            ctx.strokeStyle = '#4f46e5';
+            ctx.lineWidth = 4;
+            drawRoundedRect(ctx, (width - qrSize - 10) / 2, 140, qrSize + 20, qrSize + 20, 10);
+            ctx.stroke();
+
+            // Transaction Info
+            ctx.fillStyle = '#111827';
+            ctx.font = 'bold 18px Inter';
+            ctx.fillText(`PIN: ${transactionData.pin}`, width / 2, 380);
+            ctx.font = '16px Inter';
+            ctx.fillText(`Nama: ${transactionData.name}`, width / 2, 410);
+            ctx.fillText(`Tanggal: ${new Date(transactionData.timestamp).toLocaleDateString('id-ID')}`, width / 2, 440);
+            ctx.fillText(`Jam: ${transactionData.pickupTime || '-'}`, width / 2, 470);
+
+            // Footer
+            ctx.fillStyle = '#4b5563';
+            ctx.font = '14px Inter';
+            ctx.fillText('Tunjukkan QR ini di kasir untuk pembayaran', width / 2, 510);
+            ctx.fillText('Terima kasih telah berbelanja!', width / 2, 530);
+
+            return canvas;
+        }
+
+        // Display Products
+        function displayProducts(filter = 'all') {
+            const productsGrid = document.getElementById('productsGrid');
+            productsGrid.innerHTML = '';
+            let filteredProducts;
+
+            if (typeof filter === 'string' && filter !== 'all') {
+                filteredProducts = products.filter(p => p.category === filter);
+            } else if (Array.isArray(filter)) {
+                filteredProducts = filter;
+            } else {
+                filteredProducts = products;
+            }
+
+            if (filteredProducts.length === 0) {
+                productsGrid.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-icon">🔍</div>
+                        <p>Tidak ada produk ditemukan</p>
+                    </div>
+                `;
+                return;
+            }
+
+            filteredProducts.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card fade-in';
+                productCard.innerHTML = `
+                    <div class="product-image">
+                        <img src="${product.image}" alt="${product.name}">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">${product.name}</h3>
+                        <div class="product-price">
+                            <span class="price-current">Rp ${product.price.toLocaleString()}</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart('${product.id}')">
+                            <i class="fas fa-cart-plus"></i>
+                            Tambah ke Keranjang
+                        </button>
+                    </div>
+                `;
+                productsGrid.appendChild(productCard);
+            });
+        }
+
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) {
+                console.error(`Produk dengan ID ${productId} tidak ditemukan`);
+                return;
+            }
+            const cartItem = cart.find(item => item.id === productId);
+            if (cartItem) {
+                cartItem.quantity += 1;
+            } else {
+                cart.push({ ...product, quantity: 1 });
+            }
+            updateCart();
+            saveCart();
+        }
+
+        // Update Cart
+        function updateCart() {
+            const cartItems = document.getElementById('cartItems');
+            const cartTotal = document.getElementById('cartTotal');
+            const subtotal = document.getElementById('subtotal');
+            const totalPrice = document.getElementById('totalPrice');
+            const checkoutBtn = document.getElementById('checkoutBtn');
+            const cartCount = document.getElementById('cartCount');
+
+            if (cart.length === 0) {
+                cartItems.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-icon">🛒</div>
+                        <p>Keranjang masih kosong</p>
+                    </div>
+                `;
+                cartTotal.style.display = 'none';
+                checkoutBtn.disabled = true;
+            } else {
+                cartItems.innerHTML = '';
+                let total = 0;
+                cart.forEach((item, index) => {
+                    const cartItem = document.createElement('div');
+                    cartItem.className = 'cart-item';
+                    cartItem.innerHTML = `
+                        <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+                        <div class="cart-item-info">
+                            <div class="cart-item-name">${item.name}</div>
+                            <div class="cart-item-price">Rp ${(item.price * item.quantity).toLocaleString()}</div>
+                        </div>
+                        <div class="quantity-controls">
+                            <button class="qty-btn" onclick="updateQuantity(${index}, -1)">-</button>
+                            <span>${item.quantity}</span>
+                            <button class="qty-btn" onclick="updateQuantity(${index}, 1)">+</button>
+                            <button class="remove-btn" onclick="removeFromCart(${index})">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    `;
+                    cartItems.appendChild(cartItem);
+                    total += item.price * item.quantity;
+                });
+                subtotal.textContent = `Rp ${total.toLocaleString()}`;
+                totalPrice.textContent = `Rp ${total.toLocaleString()}`;
+                cartTotal.style.display = 'block';
+                checkoutBtn.disabled = false;
+            }
+            cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+        }
+
+        // Update Quantity
+        function updateQuantity(index, change) {
+            cart[index].quantity += change;
+            if (cart[index].quantity <= 0) {
+                cart.splice(index, 1);
+            }
+            updateCart();
+            saveCart();
+        }
+
+        // Remove from Cart
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+            saveCart();
+        }
+
+        // Clear Cart
+        function clearCart() {
+            cart = [];
+            updateCart();
+            saveCart();
+        }
+
+        // Save Cart to LocalStorage
+        function saveCart() {
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+
+        // Toggle Cart
+        function toggleCart() {
+            document.getElementById('cartSection').style.display = 'block';
+        }
+
+        // Show History Modal
+        function showHistoryModal() {
+            const historyTableBody = document.getElementById('historyTableBody');
+            const historyEmptyState = document.getElementById('historyEmptyState');
+            
+            if (transactions.length === 0) {
+                historyTableBody.innerHTML = '';
+                historyEmptyState.style.display = 'block';
+            } else {
+                historyEmptyState.style.display = 'none';
+                historyTableBody.innerHTML = '';
+                
+                transactions.forEach((transaction, index) => {
+                    if (!transaction || !transaction.transactionData || !transaction.transactionData.items) {
+                        console.warn(`Transaksi pada indeks ${index} tidak valid:`, transaction);
+                        return;
+                    }
+                    
+                    const total = transaction.transactionData.items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+                    const row = document.createElement('tr');
+                    
+                    row.innerHTML = `
+                        <td>${index + 1}</td>
+                        <td>${new Date(transaction.transactionData.timestamp).toLocaleDateString('id-ID')}</td>
+                        <td>${transaction.transactionData.name}</td>
+                        <td>Rp ${total.toLocaleString()}</td>
+                        <td><span class="status-badge completed">Selesai</span></td>
+                        <td>
+                            <button class="action-btn" onclick="showHistoryDetail(${index}, event)">
+                                <i class="fas fa-eye"></i> Detail
+                            </button>
+                        </td>
+                    `;
+                    
+                    historyTableBody.appendChild(row);
+                });
+            }
+            
+            document.getElementById('historyModal').classList.add('active');
+        }
+
+        // Show History Detail
+        function showHistoryDetail(index, event = null) {
+            if (event) {
+                event.stopPropagation();
+            }
+            
+            const transaction = transactions[index];
+            if (!transaction || !transaction.transactionData || !transaction.transactionData.items) {
+                console.error(`Transaksi pada indeks ${index} tidak valid:`, transaction);
+                return;
+            }
+            
+            const total = transaction.transactionData.items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+            const historyDetailContent = document.getElementById('historyDetailContent');
+            
+            historyDetailContent.innerHTML = `
+                <div class="receipt-content">
+                    <div class="receipt-header">
+                        <div class="receipt-logo">FXID_STORE</div>
+                        <p class="receipt-subtitle">Struk Pembelian</p>
+                        <p>${new Date(transaction.transactionData.timestamp).toLocaleString('id-ID')}</p>
+                        <p>PIN: ${transaction.transactionData.pin}</p>
+                    </div>
+                    <div class="receipt-details">
+                        <p>
+                            <span>Nama:</span>
+                            <span>${transaction.transactionData.name}</span>
+                        </p>
+                        <p>
+                            <span>No HP:</span>
+                            <span>${transaction.transactionData.phone}</span>
+                        </p>
+                        <p>
+                            <span>Jam Pengambilan:</span>
+                            <span>${transaction.transactionData.pickupTime || '-'}</span>
+                        </p>
+                        <p>
+                            <span>Metode Pembayaran:</span>
+                            <span>${transaction.transactionData.paymentMethod === 'cash' ? 'Bayar di Kasir' : 'QRIS'}</span>
+                        </p>
+                    </div>
+                    <div class="receipt-items">
+                        ${transaction.transactionData.items.map(item => `
+                            <div class="receipt-item">
+                                <span>${item.name} x ${item.quantity}</span>
+                                <span>Rp ${(item.price * item.quantity).toLocaleString()}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div class="receipt-total">Total: Rp ${total.toLocaleString()}</div>
+                </div>
+                <div class="qr-container">
+                    <div class="qr-title">QR Transaksi</div>
+                    <img src="${transaction.qrTransactionDataUrl}" alt="QR Transaksi" class="qr-code">
+                    <button class="download-btn" onclick="downloadQRFromHistory(${index})">
+                        <i class="fas fa-download"></i>
+                        Unduh QR Transaksi
+                    </button>
+                </div>
+                <div class="qr-container">
+                    <div class="qr-title">QR Pengambilan</div>
+                    <img src="${transaction.qrPickupDataUrl}" alt="QR Pengambilan" class="qr-code">
+                </div>
+                <div style="display: flex; justify-content: flex-end; margin-top: 1.5rem;">
+                    <button class="btn-secondary" onclick="closeModal('historyDetailModal')">
+                        Tutup
+                    </button>
+                </div>
+            `;
+            
+            closeModal('historyModal');
+            document.getElementById('historyDetailModal').classList.add('active');
+        }
+
+// Enhanced function to download transaction QR
+function downloadQRFromHistory(index) {
+    const transaction = transactions[index];
+    if (!transaction || !transaction.transactionData) return;
+
+    // Create canvas with enhanced design
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = 800;
+    canvas.height = 1000;
+
+    // Background gradient
+    const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+    gradient.addColorStop(0, '#6C63FF');
+    gradient.addColorStop(1, '#00C9A7');
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // White card
+    ctx.fillStyle = 'white';
+    ctx.roundRect(100, 100, canvas.width - 200, canvas.height - 200, 30);
+    ctx.fill();
+    ctx.shadowColor = 'rgba(0,0,0,0.1)';
+    ctx.shadowBlur = 20;
+    ctx.shadowOffsetY = 10;
+    ctx.fill();
+
+    // Store logo and header
+    ctx.fillStyle = '#6C63FF';
+    ctx.font = 'bold 40px Poppins';
+    ctx.textAlign = 'center';
+    ctx.fillText('FXID STORE', canvas.width/2, 200);
+    ctx.font = '24px Poppins';
+    ctx.fillStyle = '#4A5568';
+    ctx.fillText('Transaction Receipt', canvas.width/2, 240);
+
+    // Generate QR code
+    const qrDiv = document.createElement('div');
+    new QRCode(qrDiv, {
+        text: JSON.stringify({
+            items: transaction.transactionData.items,
+            name: transaction.transactionData.name,
+            pin: transaction.transactionData.pin
+        }),
+        width: 300,
+        height: 300
+    });
+
+    // Draw QR code to canvas
+    const qrImg = qrDiv.querySelector('img');
+    ctx.drawImage(qrImg, canvas.width/2 - 150, 300, 300, 300);
+
+    // Transaction details
+    ctx.fillStyle = '#2D3748';
+    ctx.font = 'bold 28px Poppins';
+    ctx.textAlign = 'left';
+    ctx.fillText('Transaction Details:', 150, 650);
+    
+    ctx.font = '20px Poppins';
+    ctx.fillText(`Date: ${new Date(transaction.transactionData.timestamp).toLocaleString()}`, 150, 700);
+    ctx.fillText(`Name: ${transaction.transactionData.name}`, 150, 750);
+    ctx.fillText(`PIN: ${transaction.transactionData.pin}`, 150, 800);
+    ctx.fillText(`Total: Rp ${transaction.transactionData.items.reduce((sum, item) => sum + item.price * item.quantity, 0).toLocaleString()}`, 150, 850);
+
+    // Footer
+    ctx.font = '18px Poppins';
+    ctx.fillStyle = '#4A5568';
+    ctx.textAlign = 'center';
+    ctx.fillText('Thank you for shopping with us!', canvas.width/2, 950);
+
+    // Download
+    const link = document.createElement('a');
+    link.href = canvas.toDataURL('image/png');
+    link.download = `fxid-receipt-${transaction.transactionData.pin}.png`;
+    link.click();
+}
+
+// Enhanced function to download QRIS image
+function downloadQrisImage() {
+    // Create enhanced QRIS canvas
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = 800;
+    canvas.height = 1000;
+
+    // Background
+    ctx.fillStyle = '#F8FAFC';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // Header
+    ctx.fillStyle = '#6C63FF';
+    ctx.roundRect(100, 100, canvas.width - 200, 150, 20);
+    ctx.fill();
+    
+    ctx.fillStyle = 'white';
+    ctx.font = 'bold 32px Poppins';
+    ctx.textAlign = 'center';
+    ctx.fillText('FXID STORE PAYMENT', canvas.width/2, 190);
+
+    // QR Code
+    ctx.fillStyle = 'white';
+    ctx.roundRect(200, 300, 400, 400, 20);
+    ctx.fill();
+    ctx.strokeStyle = '#E2E8F0';
+    ctx.lineWidth = 3;
+    ctx.stroke();
+
+    // Draw actual QRIS image
+    const qrisImg = new Image();
+    qrisImg.src = 'qris.jpg';
+    qrisImg.onload = function() {
+        ctx.drawImage(qrisImg, 250, 350, 300, 300);
+
+        // Payment details
+        ctx.fillStyle = '#2D3748';
+        ctx.font = 'bold 24px Poppins';
+        ctx.textAlign = 'left';
+        ctx.fillText('Payment Details:', 150, 750);
+        
+        const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+        ctx.font = '20px Poppins';
+        ctx.fillText(`Amount: Rp ${total.toLocaleString()}`, 150, 800);
+        ctx.fillText(`Merchant: FXID STORE`, 150, 850);
+        ctx.fillText(`Payment Method: QRIS`, 150, 900);
+
+        // Download
+        const link = document.createElement('a');
+        link.href = canvas.toDataURL('image/png');
+        link.download = `fxid-qris-payment.png`;
+        link.click();
+    };
+}
+
+// Helper function to draw rounded rectangles
+CanvasRenderingContext2D.prototype.roundRect = function(x, y, w, h, r) {
+    if (w < 2 * r) r = w / 2;
+    if (h < 2 * r) r = h / 2;
+    this.beginPath();
+    this.moveTo(x + r, y);
+    this.arcTo(x + w, y, x + w, y + h, r);
+    this.arcTo(x + w, y + h, x, y + h, r);
+    this.arcTo(x, y + h, x, y, r);
+    this.arcTo(x, y, x + w, y, r);
+    this.closePath();
+    return this;
+};
+        // Download QR
+ function downloadQR(qrId) {
+    const qrDiv = document.getElementById(qrId);
+    const qrCanvas = qrDiv.querySelector('canvas');
+    if (!qrCanvas) {
+        console.error(`Canvas untuk ${qrId} tidak ditemukan`);
+        return;
+    }
+    
+    const transaction = transactions[transactions.length - 1];
+    if (!transaction) {
+        console.error('Tidak ada transaksi terakhir');
+        return;
+    }
+    
+    // Create a new canvas with enhanced design
+    const designedCanvas = document.createElement('canvas');
+    designedCanvas.width = 800;
+    designedCanvas.height = 1000;
+    const ctx = designedCanvas.getContext('2d');
+    
+    // Background gradient
+    const gradient = ctx.createLinearGradient(0, 0, designedCanvas.width, designedCanvas.height);
+    gradient.addColorStop(0, '#6C63FF');
+    gradient.addColorStop(1, '#00C9A7');
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, designedCanvas.width, designedCanvas.height);
+    
+    // White card background
+    ctx.fillStyle = 'white';
+    ctx.roundRect(50, 50, designedCanvas.width - 100, designedCanvas.height - 100, 30);
+    ctx.fill();
+    ctx.shadowColor = 'rgba(0,0,0,0.1)';
+    ctx.shadowBlur = 20;
+    ctx.shadowOffsetY = 10;
+    ctx.fill();
+    
+    // Header
+    ctx.fillStyle = '#6C63FF';
+    ctx.font = 'bold 36px Poppins';
+    ctx.textAlign = 'center';
+    ctx.fillText('FXID STORE', designedCanvas.width/2, 120);
+    
+    // Subtitle based on QR type
+    const qrTitle = qrId.includes('Transaction') ? 'TRANSAKSI PEMBAYARAN' : 'KODE PENGAMBILAN';
+    ctx.font = '24px Poppins';
+    ctx.fillStyle = '#4A5568';
+    ctx.fillText(qrTitle, designedCanvas.width/2, 170);
+    
+    // QR Code frame
+    ctx.fillStyle = 'white';
+    ctx.roundRect(designedCanvas.width/2 - 175, 200, 350, 350, 20);
+    ctx.fill();
+    ctx.strokeStyle = '#E2E8F0';
+    ctx.lineWidth = 3;
+    ctx.stroke();
+    
+    // Draw the original QR code
+    ctx.drawImage(qrCanvas, designedCanvas.width/2 - 150, 225, 300, 300);
+    
+    // Transaction details
+    ctx.fillStyle = '#2D3748';
+    ctx.font = 'bold 24px Poppins';
+    ctx.textAlign = 'left';
+    ctx.fillText('Detail Transaksi:', 100, 600);
+    
+    ctx.font = '20px Poppins';
+    ctx.fillText(`• Nama: ${transaction.transactionData.name}`, 100, 650);
+    ctx.fillText(`• PIN: ${transaction.transactionData.pin}`, 100, 700);
+    ctx.fillText(`• Tanggal: ${new Date(transaction.transactionData.timestamp).toLocaleString('id-ID')}`, 100, 750);
+    
+    if (qrId.includes('Transaction')) {
+        const total = transaction.transactionData.items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        ctx.fillText(`• Total: Rp ${total.toLocaleString('id-ID')}`, 100, 800);
+    } else {
+        ctx.fillText(`• Jam Ambil: ${transaction.transactionData.pickupTime || '-'}`, 100, 800);
+    }
+    
+    // Footer
+    ctx.fillStyle = '#4A5568';
+    ctx.font = '18px Poppins';
+    ctx.textAlign = 'center';
+    ctx.fillText('Terima kasih telah berbelanja di FXID Store', designedCanvas.width/2, 950);
+    
+    // Download the image
+    const link = document.createElement('a');
+    const fileName = qrId.includes('Transaction') ? 
+        `fxid-transaksi-${transaction.transactionData.pin}.png` : 
+        `fxid-pengambilan-${transaction.transactionData.pin}.png`;
+    
+    link.href = designedCanvas.toDataURL('image/png');
+    link.download = fileName;
+    link.click();
+}
+
+// Add rounded rectangle method to Canvas if not exists
+if (!CanvasRenderingContext2D.prototype.roundRect) {
+    CanvasRenderingContext2D.prototype.roundRect = function(x, y, w, h, r) {
+        if (w < 2 * r) r = w / 2;
+        if (h < 2 * r) r = h / 2;
+        this.beginPath();
+        this.moveTo(x + r, y);
+        this.arcTo(x + w, y, x + w, y + h, r);
+        this.arcTo(x + w, y + h, x, y + h, r);
+        this.arcTo(x, y + h, x, y, r);
+        this.arcTo(x, y, x + w, y, r);
+        this.closePath();
+        return this;
+    };
+}
+    
+        
+
+        // Show Checkout Modal
+        function showCheckoutModal() {
+            document.getElementById('checkoutModal').classList.add('active');
+        }
+
+        // Show QRIS Modal
+        function showQrisModal() {
+            const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+            document.getElementById('qrisAmount').textContent = `Rp ${total.toLocaleString()}`;
+            document.getElementById('qrisModal').classList.add('active');
+        }
+
+        // Show Success Popup
+        function showSuccessPopup() {
+            document.getElementById('successPopup').classList.add('active');
+            
+            // Auto-close after 5 seconds
+            let seconds = 5;
+            const countdown = document.getElementById('countdown');
+            countdown.textContent = seconds;
+            
+            const timer = setInterval(() => {
+                seconds--;
+                countdown.textContent = seconds;
+                
+                if (seconds <= 0) {
+                    clearInterval(timer);
+                    closeModal('successPopup');
+                }
+            }, 1000);
+        }
+
+        // Confirm QRIS Payment
+        function confirmQrisPayment() {
+            closeModal('qrisModal');
+            processCheckout();
+        }
+
+        // Close Modal
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+        }
+
+        // Process Checkout
+        function processCheckout() {
+            showLoadingSpinner();
+            if (cart.length === 0) {
+                console.error('Keranjang kosong saat checkout');
+                hideLoadingSpinner();
+                return;
+            }
+
+            const name = checkoutData.customerName;
+            const phone = checkoutData.phoneNumber;
+            const pickupTime = checkoutData.pickupTime;
+            const paymentMethod = checkoutData.paymentMethod;
+            const pin = Math.floor(1000 + Math.random() * 9000);
+
+            // Data for QR Transaction (only id, quantity, name, pin)
+            const qrTransactionData = {
+                items: cart.map(item => ({
+                    id: item.id,
+                    quantity: item.quantity
+                })),
+                name,
+                pin
+            };
+
+            // Full transaction data for storage and display
+            const transactionData = {
+                items: [...cart],
+                name,
+                phone,
+                pickupTime,
+                paymentMethod,
+                pin,
+                timestamp: new Date().toISOString()
+            };
+
+            // Generate QR Transaction
+            const qrTransactionDiv = document.createElement('div');
+            new QRCode(qrTransactionDiv, {
+                text: JSON.stringify(qrTransactionData),
+                width: 200,
+                height: 200
+            });
+
+            // Generate QR Pickup
+            const pickupData = { pin, pickupTime };
+            const qrPickupDiv = document.createElement('div');
+            new QRCode(qrPickupDiv, {
+                text: JSON.stringify(pickupData),
+                width: 200,
+                height: 200
+            });
+
+            // Save QR to LocalStorage
+            const qrTransactionCanvas = qrTransactionDiv.querySelector('canvas');
+            const qrPickupCanvas = qrPickupDiv.querySelector('canvas');
+            if (!qrTransactionCanvas || !qrPickupCanvas) {
+                console.error('Gagal menghasilkan canvas QR');
+                hideLoadingSpinner();
+                return;
+            }
+            const transaction = {
+                transactionData,
+                pickupData,
+                qrTransactionDataUrl: qrTransactionCanvas.toDataURL('image/png'),
+                qrPickupDataUrl: qrPickupCanvas.toDataURL('image/png')
+            };
+            transactions.push(transaction);
+            localStorage.setItem('transactions', JSON.stringify(transactions));
+
+            // Close checkout modal and show receipt
+            closeModal('checkoutModal');
+            if (paymentMethod === 'qris') {
+                showSuccessPopup();
+            }
+            showReceiptModal(transaction);
+            hideLoadingSpinner();
+        }
+
+        // Show Receipt Modal
+        function showReceiptModal(transaction) {
+            const receiptName = document.getElementById('receiptName');
+            const receiptPhone = document.getElementById('receiptPhone');
+            const receiptPickupTime = document.getElementById('receiptPickupTime');
+            const receiptPaymentMethod = document.getElementById('receiptPaymentMethod');
+            const receiptDate = document.getElementById('receiptDate');
+            const receiptPin = document.getElementById('receiptPin');
+            const receiptItems = document.getElementById('receiptItems');
+            const receiptTotal = document.getElementById('receiptTotal');
+            const qrTransactionDiv = document.getElementById('qrTransaction');
+            const qrPickupDiv = document.getElementById('qrPickup');
+
+            receiptName.textContent = transaction.transactionData.name;
+            receiptPhone.textContent = transaction.transactionData.phone;
+            receiptPickupTime.textContent = transaction.transactionData.pickupTime || '-';
+            receiptPaymentMethod.textContent = transaction.transactionData.paymentMethod === 'cash' ? 'Bayar di Kasir' : 'QRIS';
+            receiptDate.textContent = new Date(transaction.transactionData.timestamp).toLocaleString('id-ID');
+            receiptPin.textContent = `PIN: ${transaction.transactionData.pin}`;
+            receiptItems.innerHTML = transaction.transactionData.items.map(item => `
+                <div class="receipt-item">
+                    <span>${item.name} x ${item.quantity}</span>
+                    <span>Rp ${(item.price * item.quantity).toLocaleString()}</span>
+                </div>
+            `).join('');
+            const total = transaction.transactionData.items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+            receiptTotal.textContent = `Total: Rp ${total.toLocaleString()}`;
+
+            qrTransactionDiv.innerHTML = '';
+            new QRCode(qrTransactionDiv, {
+                text: JSON.stringify({
+                    items: transaction.transactionData.items.map(item => ({
+                        id: item.id,
+                        quantity: item.quantity
+                    })),
+                    name: transaction.transactionData.name,
+                    pin: transaction.transactionData.pin
+                }),
+                width: 200,
+                height: 200
+            });
+
+            qrPickupDiv.innerHTML = '';
+            new QRCode(qrPickupDiv, {
+                text: JSON.stringify(transaction.pickupData),
+                width: 200,
+                height: 200
+            });
+
+            document.getElementById('receiptModal').classList.add('active');
+        }
+
+        // Send to WhatsApp
+        function sendToWhatsApp() {
+            if (transactions.length === 0) {
+                console.error('Tidak ada transaksi untuk dikirim ke WhatsApp');
+                return;
+            }
+            const transaction = transactions[transactions.length - 1];
+            if (!transaction || !transaction.transactionData || !transaction.transactionData.items) {
+                console.error('Transaksi terakhir tidak valid:', transaction);
+                return;
+            }
+            const { name, phone, pickupTime, paymentMethod, pin, items } = transaction.transactionData;
+            const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+            const paymentText = paymentMethod === 'cash' ? 'Bayar di Kasir' : 'QRIS';
+            const qrisInstruction = paymentMethod === 'qris' ? '\n*Catatan*: Silakan kirimkan bukti pembayaran QRIS ke nomor ini.' : '';
+            const message = `
+🌟 *Struk Pembelian FXID_STORE* 🌟
+----------------------------------------
+🏬 *Toko*: FXID_STORE
+📅 Tanggal: ${new Date(transaction.transactionData.timestamp).toLocaleString('id-ID')}
+🕒 Jam Pengambilan: ${pickupTime || '-'}
+🔑 PIN Transaksi: ${pin}
+👤 *Nama Pemesan*: ${name}
+📱 *No HP*: ${phone}
+💳 *Metode Pembayaran*: ${paymentText}
+----------------------------------------
+🛒 *Detail Pesanan*:
+${items.map((item, index) => `
+${index + 1}. ${item.name}
+   Jumlah: ${item.quantity}
+   Harga: Rp ${item.price.toLocaleString()}
+   Subtotal: Rp ${(item.price * item.quantity).toLocaleString()}
+`).join('')}
+----------------------------------------
+💰 *Total*: Rp ${total.toLocaleString()}
+----------------------------------------
+Terima kasih atas pembelian Anda! 🙏
+Silakan simpan struk ini untuk pengambilan barang.
+📲 *Unduh QR Kode*: Tunjukkan QR ini saat pembayaran di kasir.
+${qrisInstruction}
+            `;
+            const waUrl = `https://wa.me/6289526335486?text=${encodeURIComponent(message)}`;
+            window.open(waUrl, '_blank');
+            // Mark order as complete and clear cart
+            cart = [];
+            saveCart();
+            updateCart();
+            closeModal('receiptModal');
+        }
+
+        // Handle Checkout Form Submission
+        document.getElementById('checkoutForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            checkoutData = {
+                customerName: document.getElementById('customerName').value,
+                phoneNumber: document.getElementById('phoneNumber').value,
+                pickupTime: document.getElementById('pickupTime').value,
+                paymentMethod: document.getElementById('paymentMethod').value
+            };
+
+            if (checkoutData.paymentMethod === 'qris') {
+                showQrisModal();
+            } else {
+                processCheckout();
+            }
+        });
+
+        // Filter Products
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelector('.filter-btn.active').classList.remove('active');
+                btn.classList.add('active');
+                displayProducts(btn.dataset.filter);
+            });
+        });
+
+        // Search Products
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            if (!searchTerm) {
+                displayProducts('all');
+            } else {
+                const filtered = products.filter(p => p.name.toLowerCase().includes(searchTerm));
+                displayProducts(filtered);
+            }
+        });
+
+        // Initialize QRIS Image Click Event Listener
+        document.addEventListener('DOMContentLoaded', () => {
+            document.addEventListener('click', (e) => {
+                if (e.target.classList.contains('qris-image')) {
+                    const fullscreenImage = document.getElementById('fullscreenQrisImage');
+                    const fullscreenContainer = document.getElementById('fullscreenQris');
+                    fullscreenImage.src = e.target.src;
+                    fullscreenContainer.classList.add('active');
+                } else if (e.target.classList.contains('fullscreen-qris') || e.target.classList.contains('fullscreen-close')) {
+                    document.getElementById('fullscreenQris').classList.remove('active');
+                }
+            });
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchProducts();
+            toggleCart();
+        });
+    </script>
+</body>
+</html>
